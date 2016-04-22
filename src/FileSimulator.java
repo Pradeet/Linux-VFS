@@ -19,7 +19,7 @@ public class FileSimulator {
 		String cmd = "";
 		FileSystem sda = null;
 		try {
-			sda = new FileSystem(10240);
+			sda = new FileSystem(1024);
 		} catch (IOException e) {
 			System.out.println("Unable to Create FileSystem");
 			cmd = "exit";

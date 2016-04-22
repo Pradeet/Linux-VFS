@@ -2,3 +2,4 @@ bin/
 *.fuse_*
 sda*
 *.class
+.project

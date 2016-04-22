@@ -15,13 +15,13 @@ public class DiskManager {
 	 * @throws IOException
 	 */
 	public DiskManager(int size) throws IOException {
-		File f = new File("sda1");
-		if(f.exists()){
+		File file = new File("sda1");
+		if (file.exists()) {
 			sda = new RandomAccessFile("sda1", "rw");
 		} else {
 			sda = new RandomAccessFile("sda1", "rw");
 			byte[] buf = new byte[size * 1024];
-			sda.write(buf);
+			sda.write(buf);	
 		}
 	}
 
