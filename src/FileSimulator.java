@@ -108,8 +108,8 @@ public class FileSimulator {
 					String fileName = sc.next();
 					String data = sda.read(formatPath(formatPrompt(prompt) + "/" + fileName));
 					System.out.println(data);
-				} catch (IOException e) {
-					e.printStackTrace();
+				} catch (Exception e) {
+					System.out.println("File Not Found");
 				}
 				break;
 			case "echo":
