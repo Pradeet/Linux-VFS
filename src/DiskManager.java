@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.ArrayList;
@@ -14,9 +15,14 @@ public class DiskManager {
 	 * @throws IOException
 	 */
 	public DiskManager(int size) throws IOException {
-		sda = new RandomAccessFile("sda1", "rw");
-		byte[] buf = new byte[size * 1024];
-		sda.write(buf);
+		File file = new File("sda1");
+		if (file.exists()) {
+			sda = new RandomAccessFile("sda1", "rw");
+		} else {
+			sda = new RandomAccessFile("sda1", "rw");
+			byte[] buf = new byte[size * 1024];
+			sda.write(buf);	
+		}
 	}
 
 	public void writeToDisk(Leaf file, String input) throws IOException {
