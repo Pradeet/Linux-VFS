@@ -1,0 +1,4 @@
+bin/
+*.fuse_*
+sda*
+*.class
